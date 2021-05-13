@@ -1,0 +1,5 @@
+# config.txt
+
+[api]
+endpoint = https://api.themap.net/api
+auth = https://auth.themap.net
