@@ -5,6 +5,7 @@ from importlib import resources  # Python 3.7+
 import sys
 
 def main():
+    # https://stackoverflow.com/questions/6028000/how-to-read-a-static-file-from-inside-a-python-package
     """Interact with themap APIs to create awesome maps"""
     # Read configurations from config file
     cfg = ConfigParser()

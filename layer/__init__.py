@@ -10,3 +10,5 @@ from .download_layer import download_layer
 from .get_default_style import get_default_style
 from .import_file import import_file
 from .update_layer import update_layer
+from .add_links_to_link_layer import add_links_to_link_layer
+from .add_link_property import add_link_property
