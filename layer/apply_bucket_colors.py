@@ -59,38 +59,50 @@ def generate_bucket_ranges(layer_id, field,colors, token):
     data = r.json()
     sorted_data = newlist = filter_outliers(data, value_fn=lambda x: parse_number(x["Value"]),threshold=5)
     total = len(sorted_data)
-    point1 = math.floor(total / 4) - 1
-    point2 = math.floor(total / 2) - 1
-    point3 = math.floor((total) * (3 / 4)) - 1
-    ranges = []
-    colors = colors or "#0000ff-#00ff00-#ffff00-#0000ff"
-    color_set = colors.split("-")
-    ranges.append({
-                    'start': float(sorted_data[0]["Value"] or 0),
-                    'stop': float(sorted_data[point1]["Value"] or 0),
-                    'color': color_set[0],
-                    'IDs': []
-                })
-    ranges.append({
-                    'start': float(sorted_data[point1]["Value"] or 0),
-                    'stop': float(sorted_data[point2]["Value"] or 0),
-                    'color': color_set[1],
-                    'IDs': []
-                })
-    ranges.append({
-                    'start': float(sorted_data[point2]["Value"] or 0),
-                    'stop': float(sorted_data[point3]["Value"] or 0),
-                    'color': color_set[2],
-                    'IDs': []
-                })
-    ranges.append({
-                    'start': float(sorted_data[point3]["Value"] or 0),
-                    'stop': float(sorted_data[total - 1]["Value"] or 0),
-                    'color': color_set[3],
-                    'IDs': []
-                })
-    for f in sorted_data:
-        matched = next(x for x in ranges if (x["start"] <= parse_number(f["Value"])) and (x["stop"] >= parse_number(f["Value"])))
-        matched['IDs'].append(f["dynaID"])
-    #print(*ranges, sep = "\n")
-    return ranges
+    if total > 4:
+        point1 = math.floor(total / 4) - 1
+        point2 = math.floor(total / 2) - 1
+        point3 = math.floor((total) * (3 / 4)) - 1
+        ranges = []
+        colors = colors or "#0000ff-#00ff00-#ffff00-#0000ff"
+        color_set = colors.split("-")
+        ranges.append({
+                        'start': float(sorted_data[0]["Value"] or 0),
+                        'stop': float(sorted_data[point1]["Value"] or 0),
+                        'color': color_set[0],
+                        'IDs': []
+                    })
+        ranges.append({
+                        'start': float(sorted_data[point1]["Value"] or 0),
+                        'stop': float(sorted_data[point2]["Value"] or 0),
+                        'color': color_set[1],
+                        'IDs': []
+                    })
+        ranges.append({
+                        'start': float(sorted_data[point2]["Value"] or 0),
+                        'stop': float(sorted_data[point3]["Value"] or 0),
+                        'color': color_set[2],
+                        'IDs': []
+                    })
+        ranges.append({
+                        'start': float(sorted_data[point3]["Value"] or 0),
+                        'stop': float(sorted_data[total - 1]["Value"] or 0),
+                        'color': color_set[3],
+                        'IDs': []
+                    })
+        for f in sorted_data:
+            matched = next(x for x in ranges if (x["start"] <= parse_number(f["Value"])) and (x["stop"] >= parse_number(f["Value"])))
+            matched['IDs'].append(f["dynaID"])
+        #print(*ranges, sep = "\n")
+        return ranges
+    else:
+        ranges = [{
+                        'start': float(sorted_data[0]["Value"] or 0),
+                        'stop': float(sorted_data[total-1]["Value"] or 0),
+                        'color': "#074223",
+                        'IDs': []
+                    }]
+        for f in sorted_data:
+            ranges[0]['IDs'].append(f["dynaID"])
+        #print(*ranges, sep = "\n")
+        return ranges

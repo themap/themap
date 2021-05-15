@@ -88,18 +88,18 @@ def generate_gradient_ranges(layer_id, field,sizes, token):
 
     ranges = {
         'min' : {
-            'value' : sorted_data[0]["Value"] or 0,
+            'value' : parse_number(sorted_data[0]["Value"]) or 0,
             'size' : size_set[0]
         },
         'max' : {
-            'value' : sorted_data[total-1]["Value"] or 0,
+            'value' : parse_number(sorted_data[total-1]["Value"]) or 0,
             'size' : size_set[1]
         },
         'stops' : []
     }
     
     for f in sorted_data:
-        value = interp(f["Value"],[sorted_data[0]["Value"],sorted_data[total-1]["Value"]],[parse_number(size_set[0]),parse_number(size_set[1])])
+        value = interp(parse_number(f["Value"]),[parse_number(sorted_data[0]["Value"]),parse_number(sorted_data[total-1]["Value"])],[parse_number(size_set[0]),parse_number(size_set[1])])
         ranges['stops'].append([f["dynaID"],value*20])
     #print(*ranges, sep = "\n")
     return ranges
