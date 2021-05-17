@@ -4,3 +4,4 @@ from .get_map import get_map
 from .search_map import search_map
 from .transfer_map import transfer_map
 from .update_map import update_map
+from .get_all_features import get_all_features
