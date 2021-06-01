@@ -1,7 +1,7 @@
 import requests
 
-def import_file(filename,name_prop,map_id,layer_id,token):
-    file = filename
+def import_file(filepath,name_prop,map_id,layer_id,token):
+    file = filepath
     files = {'tileJSON': open(file,'rb')}
     values = {'tourmapID': map_id, 'nameProp': name_prop, 'layerID': layer_id}
     print('Uploading File : '+file)
