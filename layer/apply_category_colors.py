@@ -2,7 +2,7 @@ import json
 import random
 import requests
 
-def apply_category_colors(layer, field, token): 
+def apply_category_colors(layer, field, token, colors = {}): 
     print('Appling Category colors by '+field+'...')
     style = json.loads(layer["GLStyle"])
     style['legend']['color']['field'] = field
@@ -13,13 +13,15 @@ def apply_category_colors(layer, field, token):
         'property' : "dynaID",
         'stops' : []
     }
-    category_data = generate_categories(layer["ID"], field, token)
+    category_data = generate_categories(layer["ID"], field, token,colors)
     style['legend']['color']['categories'] = category_data['categories']
     style['common']['common-color']['stops'] = category_data['stops']
     layer["GLStyle"] = json.dumps(style)
     layer["HoverField"] = field
     layer["IsShowProperties"] = True
-    return layer
+    headers = {'authorization': 'Bearer '+token}
+    r = requests.post('https://api.themap.net/api/Tour2/UpdateTourMapLayer', data = layer, headers = headers)
+    return r.json()
 
 def parse_number(value):
     try:
@@ -30,7 +32,7 @@ def parse_number(value):
 def random_color():
     return "#"+("%06x" % random.randint(0, 0xFFFFFF))
     
-def generate_categories(layer_id, field, token): 
+def generate_categories(layer_id, field, token,colors): 
     headers = {'authorization': 'Bearer '+token}
     payload = {
         "layerID" : layer_id,
@@ -46,7 +48,7 @@ def generate_categories(layer_id, field, token):
     for value in value_set:
         categories.append({
             "value" : value,
-            "color" : random_color()
+            "color" : colors[value] if value in colors else random_color()
         })
     stops = []
     for item in data:
