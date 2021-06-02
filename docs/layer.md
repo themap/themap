@@ -141,14 +141,14 @@ It will download complete layer data along with geometry as geoJSON file.
 
 It will take geoJSON file and upload it to layer as geometry + data.
 
-**Signature**: `import_file(filepath,name_prop,map_id,layer_id,token)`
+**Signature**: `import_file(filepath,name_prop,map_id,token,layer_id = None)`
 
 **Params**
 
 - `filepath` **{string}**: Path of the geoJSON file to be uploaded
 - `name_prop` **{string}**: GeoJSON property name which should be used as name of each shape
 - `map_id` **{number}**: ID of the map in which file should be imported
-- `layer_id` **{number}**: ID of the layer in which file should be imported
+- `layer_id` **{number}**: Optional ID of the layer in which file should be imported
 - `token` **{string}**: auth token
 
 **Returns**: `layer` **{dict}** server data layer dict
@@ -180,6 +180,21 @@ It creates new image layer inside a map. Image layer is a layer type where each 
 - `token` **{string}**: auth token
 
 **Returns**: `layer` **{dict}** server image layer dict
+
+## add_images_to_image_layer
+
+It adds set of images to the image layer inside a map. 
+
+**Signature**: `add_images_to_image_layer(layer,images,token)`
+
+**Params**
+
+- `layer` **{dict}**: [image layer dict](concepts/image_layer_defination.md#object-schema) with `TourMapID` as required field
+- `images` **{array}**: An array of dict. Each dict should contain 4 keys: `Title`,`Url`,`Latitude` and `Longitude`. 
+- `token` **{string}**: auth token
+
+**Returns**: `layer` **{dict}** server image layer dict
+
 
 ## create_link_layer
 
