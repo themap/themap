@@ -24,7 +24,7 @@ setup(
         "Programming Language :: Python :: 3.7",
     ],
     #packages=["map","layer","common","extras"],
-    packages=find_packages(exclude=("tests",)),
+    packages=find_packages(exclude=("tests","docs")),
     include_package_data=True,
     install_requires=["matplotlib"],
     entry_points={
