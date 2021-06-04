@@ -1,6 +1,6 @@
-# Link layer defination
+# Image layer definition
 
-Data layer is specific layer type which can contain point type geometries. It's meant to represent any web link as geographic point on the map. Typical link layer object looks like this.
+Image layer is specific layer type which can contain point type geometries. It's meant to represent any image as geographic point on the map. Typical image layer object looks like this.
 
 ## Object Schema
     {

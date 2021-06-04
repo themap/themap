@@ -1,4 +1,4 @@
-# Data layer defination
+# Data layer definition
 
 Data layer is very generic layer type in TheMap which faciliates any geojson rendering on map. Typical layer object looks like this.
 

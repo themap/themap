@@ -1,4 +1,4 @@
-# Layer style defination
+# Layer style definition
 
 TheMap data layers are split into geometry and non-geometry data when layer is created. This is essential to speed up the viewing expeirience specially when size is larger. That also means that style data is decouped from geometry data. This style object provides defination about how geometry should be styled. A typical style object looks like this.
 
