@@ -3,6 +3,7 @@
 Map object is container object representing one map on TheMap platform.
 
 ## Object Schema
+
     {
         "Title": "Sample Map",
         "Description": "This is cool!",
