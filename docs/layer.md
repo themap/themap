@@ -168,6 +168,20 @@ It updates the feature of the layer for it's content which is being displayed wh
 
 **Returns**: `layer` **{dict}** server data layer dict
 
+
+## generate_feature_html
+
+It takes input template and generate html which can be used further as feature content.
+
+**Signature**: `generate_feature_html(template)`
+
+**Params**
+
+- `template` **{array}**: [template](concepts/feature_content_template.md) of the feature content.
+
+**Returns**: `html` **{string}** generated html content based on
+
+
 ## create_image_layer
 
 It creates new image layer inside a map. Image layer is a layer type where each shape is assumed to be point representing any image.

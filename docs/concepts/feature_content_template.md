@@ -13,8 +13,8 @@ Feature content supports the rich media format to be displayed. To provide rich 
 
 So template would be an array containing any number of elements. Media being rendered will follow the same sequence as provided in an array.
 
-* `type` - Possible value : `heading`,`link`,`image` or `video`
-* `value` - In case of heading, it will be heading text. In case of link, image or video, it will be url of the link/media.
+* `type` - Possible value : `heading`,`link`,`image`,`anchor`,`content` or `video`
+* `value` - In case of heading, it will be heading text. In case of link, image or video, it will be url of the link/media. In case of anchor it should be | seprated anchor name and link. e.g. `Anchor Name|https://anchor.link`. In case of content, it will be any text or html
 
 ## Example
 
@@ -23,4 +23,6 @@ So template would be an array containing any number of elements. Media being ren
         'image:https://www.link.to/hero-image.png',
         'link:https://www.visit.this/link/to/know/more',
         'heading:How about another heading?',
+        'anchor:Follow This Link|https://themap.net',
+        'content:Some text that goes as paragraph',
     ]

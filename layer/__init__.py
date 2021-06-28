@@ -14,3 +14,4 @@ from .add_links_to_link_layer import add_links_to_link_layer
 from .add_images_to_image_layer import add_images_to_image_layer
 from .add_link_property import add_link_property
 from .update_feature import update_feature
+from .generate_feature_html import generate_feature_html
