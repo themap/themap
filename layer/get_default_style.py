@@ -30,6 +30,15 @@ def get_default_style():
                 "categories": [],
                 "ranges": []
             },
+            "stroke-color": {
+                "type": "uniform",
+                "color": "#074223",
+                "field": None,
+                "min": {},
+                "max": {},
+                "categories": [],
+                "ranges": []
+            },
             "size": {
                 "type": "uniform",
                 "size": 0.5,
