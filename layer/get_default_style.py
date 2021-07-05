@@ -3,13 +3,15 @@ def get_default_style():
         'common' : {
             'common-color': '#074223',
             'common-stroke-color': '#ffffff',
+            'common-stroke-opacity': 0.7,
             'common-opacity': 0.7,
             'common-width': 3,
             'common-size': 0.5,
             'common-image': "marker",
             'common-height': 1000,
             'image-marker' : None,
-            'extrusion' : False
+            'extrusion' : False,
+            'outline' : False,
         },
         "colorType": 'uniform',
         "legend": {
@@ -30,7 +32,7 @@ def get_default_style():
                 "categories": [],
                 "ranges": []
             },
-            "stroke-color": {
+            "outlineColor": {
                 "type": "uniform",
                 "color": "#074223",
                 "field": None,

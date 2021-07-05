@@ -2,11 +2,11 @@ import json
 import random
 import requests
 
-def apply_category_stroke_colors(layer, field, token, colors = {}): 
-    print('Appling Category stroke colors by '+field+'...')
+def apply_category_outline_colors(layer, field, token, colors = {}): 
+    print('Appling Category outline colors by '+field+'...')
     style = json.loads(layer["GLStyle"])
-    style['legend']['stroke-color']['field'] = field
-    style['legend']['stroke-color']['type'] = 'category'
+    style['legend']['outlineColor']['field'] = field
+    style['legend']['outlineColor']['type'] = 'category'
     
     style['common']['common-stroke-color'] = {
         'type' : "categorical",
@@ -14,7 +14,7 @@ def apply_category_stroke_colors(layer, field, token, colors = {}):
         'stops' : []
     }
     category_data = generate_categories(layer["ID"], field, token,colors)
-    style['legend']['stroke-color']['categories'] = category_data['categories']
+    style['legend']['outlineColor']['categories'] = category_data['categories']
     style['common']['common-stroke-color']['stops'] = category_data['stops']
     layer["GLStyle"] = json.dumps(style)
     headers = {'authorization': 'Bearer '+token}

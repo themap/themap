@@ -95,6 +95,23 @@ It will apply gradient colors to layer and update the style information on thema
 
 **Returns**: `layer` **{dict}** updated layer dict
 
+## apply_category_outline_colors
+
+It will apply category based colors to layer outline and update the style information on themap server.
+
+**Signature**: `apply_category_outline_colors(layer, field, token, colors = {})`
+
+**Params**
+
+- `layer` **{dict}**: layer dict on which category colors should be applied
+- `field` **{string}**: field which should be used as a category
+- `token` **{string}**: auth token
+- `colors` **{dict}**: color dict to specify color for particular category. If not specified, it will pick random colors
+
+**Returns**: `layer` **{dict}** updated layer dict
+
+
+
 ## apply_gradient_sizes
 
 It will apply gradient sizes to layer and update the style information on themap server.

@@ -8,12 +8,14 @@ TheMap data layers are split into geometry and non-geometry data when layer is c
         'common' : {
             'common-color': '#074223',
             'common-stroke-color': '#ffffff',
+            'common-stroke-opacity': 0.7,
             'common-opacity': 0.7,
             'common-width': 3,
             'common-size': 0.5,
             'common-image': "marker",
             'common-height': 1000,
-            'extrusion' : False
+            'extrusion' : False,
+            'outline' : False,
         },
         "colorType": 'uniform',
         "legend": {
@@ -26,6 +28,15 @@ TheMap data layers are split into geometry and non-geometry data when layer is c
                 "max": {},
             },
             "color": {
+                "type": "uniform",
+                "color": "#074223",
+                "field": None,
+                "min": {},
+                "max": {},
+                "categories": [],
+                "ranges": []
+            },
+            "outlineColor": {
                 "type": "uniform",
                 "color": "#074223",
                 "field": None,
@@ -55,6 +66,7 @@ This object contains styling definations regarding appearance of the layer.
     {
         'common-color': '#074223',
         'common-stroke-color': '#ffffff',
+        'common-stroke-opacity': 0.7,
         'common-opacity': 0.7,
         'common-width': 3,
         'common-size': 0.5,
@@ -71,13 +83,17 @@ Defines the color of shapes. It should be hex color code always. If unspecified,
 
 Certain shape types (e.g. Polygon, Circle) can have different shape color and also different stroke/outline color. For those shapes, this field provides stroke color value.
 
+### common-stroke-opacity
+
+Certain shape types (e.g. Polygon, Circle) can have different shape opacity and also different stroke/outline opacity. For those shapes, this field provides stroke opacity value.
+
 ### common-opacity
 
 Defines the opacity of the shapes. Value range `min : 0, max:1`
 
 ### common-width
 
-Defines the stroke width of the shape. e.g. stroke width of circle, line width of line shape. Value range `min : 1, max:10`
+Defines the stroke width of the shape. e.g. stroke width of circle, line width of line shape and outline width of fillshape. Value range `min : 1, max:10`
 
 ### common-size
 
@@ -93,9 +109,11 @@ When layer has [extrusion](#extrusion) enabled this field decides the height of 
 
 ### extrusion
 
-Defines the color of shapes.
-
 This field decides whether to enable extrusion for particular layer or not. Posiible values are `True` or `False`.
+
+### outline
+
+This field decides whether to enable outline for particular fill layer or not. Posiible values are `True` or `False`.
 
 ## colorType
 
