@@ -14,4 +14,4 @@
     themap.layer.update_layer(layer,token)
     print('Map generated : https://themap.net/maps/view/'+tourmap['Handle'])
 
-For complete reference to all possible map options and layer options, Refer [Layer defination](../concepts/layer_defination.md) and [Map defination](../concepts/map_defination.md)
+For complete reference to all possible map options and layer options, Refer [Layer definition](../concepts/layer_definition.md) and [Map definition](../concepts/map_definition.md)

@@ -10,7 +10,7 @@ It creates new data layer inside a map.
 
 **Params**
 
-- `layer` **{dict}**: [layer dict](concepts/layer_defination.md#object-schema) with `TourMapID` as required field
+- `layer` **{dict}**: [layer dict](concepts/layer_definition.md#object-schema) with `TourMapID` as required field
 - `token` **{string}**: auth token
 
 **Returns**: `layer` **{dict}** server data layer dict
@@ -23,7 +23,7 @@ It updates the data layer inside a map.
 
 **Params**
 
-- `layer` **{dict}**: [layer dict](concepts/layer_defination.md#object-schema) with `TourMapID` and `ID` as required fields
+- `layer` **{dict}**: [layer dict](concepts/layer_definition.md#object-schema) with `TourMapID` and `ID` as required fields
 - `token` **{string}**: auth token
 
 **Returns**: `layer` **{dict}** server data layer dict
@@ -31,7 +31,7 @@ It updates the data layer inside a map.
 
 ## get_default_style
 
-It provides default style defination for layer. Ideally after creating new layer, if you intend to style it further, you should acquire defualt style dict and change that dict further. e.g.
+It provides default style definition for layer. Ideally after creating new layer, if you intend to style it further, you should acquire defualt style dict and change that dict further. e.g.
 
     layer = themap.layer.create_layer(layer,token)
     style = themap.layer.get_default_style()
@@ -40,7 +40,7 @@ It provides default style defination for layer. Ideally after creating new layer
         #...
     layer["GLStyle"] = json.dumps(style)
         #...
-        # You might pass this style defination to other funtions to apply further styling
+        # You might pass this style definition to other funtions to apply further styling
         # e.g. themap.layer.apply_category_colors(layer,'<<categofy_field>>',token)
         # Style is now assigned in layer, let's update layer
     layer = themap.layer.update_layer(layer,token)
@@ -48,7 +48,7 @@ It provides default style defination for layer. Ideally after creating new layer
 
 **Signature**: `get_default_style()`
 
-**Returns**: `style` **{dict}** default [style dict](concepts/layer_style_defination.md#style-object-schema)
+**Returns**: `style` **{dict}** default [style dict](concepts/layer_style_definition.md#style-object-schema)
 
 ## apply_category_colors
 
@@ -221,7 +221,7 @@ It creates new image layer inside a map. Image layer is a layer type where each 
 
 **Params**
 
-- `layer` **{dict}**: [image layer dict](concepts/image_layer_defination.md#object-schema) with `TourMapID` as required field
+- `layer` **{dict}**: [image layer dict](concepts/image_layer_definition.md#object-schema) with `TourMapID` as required field
 - `token` **{string}**: auth token
 
 **Returns**: `layer` **{dict}** server image layer dict
@@ -234,7 +234,7 @@ It adds set of images to the image layer inside a map.
 
 **Params**
 
-- `layer` **{dict}**: [image layer dict](concepts/image_layer_defination.md#object-schema) with `TourMapID` as required field
+- `layer` **{dict}**: [image layer dict](concepts/image_layer_definition.md#object-schema) with `TourMapID` as required field
 - `images` **{array}**: An array of dict. Each dict should contain 4 keys: `Title`,`Url`,`Latitude` and `Longitude`. 
 - `token` **{string}**: auth token
 
@@ -249,7 +249,7 @@ It creates new link layer inside a map. Link layer is a layer type where each sh
 
 **Params**
 
-- `layer` **{dict}**: [link layer dict](concepts/link_layer_defination.md#object-schema) with `TourMapID` as required field
+- `layer` **{dict}**: [link layer dict](concepts/link_layer_definition.md#object-schema) with `TourMapID` as required field
 - `token` **{string}**: auth token
 
 **Returns**: `layer` **{dict}** server link layer dict
@@ -262,7 +262,7 @@ It adds set of links to the link layer inside a map.
 
 **Params**
 
-- `layer` **{dict}**: [link layer dict](concepts/link_layer_defination.md#object-schema) with `TourMapID` as required field
+- `layer` **{dict}**: [link layer dict](concepts/link_layer_definition.md#object-schema) with `TourMapID` as required field
 - `link` **{array}**: An array of dict. Each dict should contain 3 keys: `Url`,`Latitude` and `Longitude`. Themap API would parse metadata from the link automatically.
 - `token` **{string}**: auth token
 

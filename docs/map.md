@@ -10,7 +10,7 @@ It creates new map on TheMap platform.
 
 **Params**
 
-- `tourmap` **{dict}**: [map dict](concepts/map_defination.md#object-schema)
+- `tourmap` **{dict}**: [map dict](concepts/map_definition.md#object-schema)
 - `token` **{string}**: auth token
 
 **Returns**: `map` **{dict}** server map dict
@@ -26,7 +26,7 @@ It retrives existing map using its handle.
 - `handle` **{string}**: Handle of the map to be retrived
 - `token` **{string}**: auth token
 
-**Returns**: `map` **{dict}** server [map dict](concepts/map_defination.md#object-schema)
+**Returns**: `map` **{dict}** server [map dict](concepts/map_definition.md#object-schema)
 
 ## search_map
 
@@ -51,7 +51,7 @@ It updates existing map with provided fields
 
 **Params**
 
-- `tourmap` **{dict}**: [map dict](concepts/map_defination.md#object-schema) with `ID` as required field
+- `tourmap` **{dict}**: [map dict](concepts/map_definition.md#object-schema) with `ID` as required field
 - `token` **{string}**: auth token
 
 **Returns**: `map` **{dict}** updated server map dict

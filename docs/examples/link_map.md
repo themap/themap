@@ -30,4 +30,4 @@
                 themap.layer.add_link_property(links[0],prop,row[prop],token)
     print('Map generated : /'+tourmap['Handle'])
 
-For complete reference to all possible map options and layer options, Refer [Link Layer defination](../concepts/link_layer_defination.md) and [Map defination](../concepts/map_defination.md)
+For complete reference to all possible map options and layer options, Refer [Link Layer definition](../concepts/link_layer_definition.md) and [Map definition](../concepts/map_definition.md)

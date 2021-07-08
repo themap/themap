@@ -23,7 +23,7 @@ It generates the screenshot of the map and update the map image with the screens
 
 **Params**
 
-- `map` **{dict}**: [Map](concepts/map_defination.md)
+- `map` **{dict}**: [Map](concepts/map_definition.md)
 - `token` **{string}**: TheMap token
 
 **Returns**: `map` **{dict}** Updated map dict

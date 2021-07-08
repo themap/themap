@@ -1,6 +1,6 @@
 # Layer style definition
 
-TheMap data layers are split into geometry and non-geometry data when layer is created. This is essential to speed up the viewing expeirience specially when size is larger. That also means that style data is decouped from geometry data. This style object provides defination about how geometry should be styled. A typical style object looks like this.
+TheMap data layers are split into geometry and non-geometry data when layer is created. This is essential to speed up the viewing expeirience specially when size is larger. That also means that style data is decouped from geometry data. This style object provides definition about how geometry should be styled. A typical style object looks like this.
 
 ## Style object schema
 
@@ -61,7 +61,7 @@ The above object is the same object you receive from [layer.get_default_style](.
 
 ## Common
 
-This object contains styling definations regarding appearance of the layer.
+This object contains styling definitions regarding appearance of the layer.
 
     {
         'common-color': '#074223',
@@ -105,7 +105,7 @@ This field defines whether points should be rendered as marker or circle. By def
 
 ### common-height
 
-When layer has [extrusion](#extrusion) enabled this field decides the height of extrusion. This field can accept any data driven style defination accepted by [mapbox extrusion height](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#paint-fill-extrusion-fill-extrusion-height). 
+When layer has [extrusion](#extrusion) enabled this field decides the height of extrusion. This field can accept any data driven style definition accepted by [mapbox extrusion height](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#paint-fill-extrusion-fill-extrusion-height). 
 
 ### extrusion
 

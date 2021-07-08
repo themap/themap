@@ -1,3 +1,22 @@
 site_name: TheMap Python Documentation
 theme: readthedocs
 dev_addr: '0.0.0.0:8070'
+nav:
+    - 'Getting started' : 'index.md'
+    - Introdcution : 'introduction.md'
+    - 'Map Functions' : 'map.md'
+    - 'Layer Functions' : 'layer.md'
+    - 'Common Functions' : 'common.md'
+    - 'Extra Functions' : 'extras.md'
+    - Concepts : 
+        - 'Map' : 'concepts/map_definition.md'
+        - 'Layer' : 'concepts/layer_definition.md'
+        - 'Link Layer' : 'concepts/link_layer_definition.md'
+        - 'Image Layer' : 'concepts/image_layer_definition.md'
+        - 'Layer Style' : 'concepts/layer_style_definition.md'
+        - 'Feature Content Template' : 'concepts/feature_content_template.md'
+    - Examples : 
+        - 'Data Map' : 'examples/data_map.md'
+        - 'Image Map' : 'examples/image_map.md'
+        - 'Link Map' : 'examples/link_map.md'
+    - 'Web Portal': 'https://themap.io'

@@ -31,4 +31,4 @@
     themap.common.generate_screenshot(map,token)
     print('Map generated : /'+tourmap['Handle'])
 
-For complete reference to all possible map options and layer options, Refer [Image Layer defination](../concepts/image_layer_defination.md) and [Map defination](../concepts/map_defination.md)
+For complete reference to all possible map options and layer options, Refer [Image Layer definition](../concepts/image_layer_definition.md) and [Map definition](../concepts/map_definition.md)
