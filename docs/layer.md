@@ -110,6 +110,20 @@ It will apply category based colors to layer outline and update the style inform
 
 **Returns**: `layer` **{dict}** updated layer dict
 
+## apply_category_opacity
+
+It will apply category based opacity to layer and update the style information on themap server.
+
+**Signature**: `apply_category_opacity(layer, field, token, opacities = {})`
+
+**Params**
+
+- `layer` **{dict}**: layer dict on which category opacity should be applied
+- `field` **{string}**: field which should be used as a category
+- `token` **{string}**: auth token
+- `opacities` **{dict}**: opacity dict to specify opacity for particular category. If not specified, it will pick random value
+
+**Returns**: `layer` **{dict}** updated layer dict
 
 
 ## apply_gradient_sizes

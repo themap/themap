@@ -41,6 +41,15 @@ def get_default_style():
                 "categories": [],
                 "ranges": []
             },
+            "opacity": {
+                "type": "uniform",
+                "opacity": 1,
+                "field": None,
+                "min": {},
+                "max": {},
+                "categories": [],
+                "ranges": []
+            },
             "size": {
                 "type": "uniform",
                 "size": 0.5,
