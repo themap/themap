@@ -1,8 +1,8 @@
 import json
 import math
 import requests
-from ..common import color_fader
-from ..common import filter_outliers
+from ...common import color_fader
+from ...common import filter_outliers
 from numpy import interp
 
 def apply_gradient_colors(layer, field, colors, token): 

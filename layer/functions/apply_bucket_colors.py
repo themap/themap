@@ -1,7 +1,7 @@
 import json
 import math
 import requests
-from ..common import filter_outliers
+from ...common import filter_outliers
 
 def apply_bucket_colors(layer, field, colors, token): 
     print('Appling Bucket colors by '+field+'...')

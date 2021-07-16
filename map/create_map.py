@@ -1,7 +1,9 @@
 import requests
+from ..common import config
+from .map_class import Map
 
-def create_map(tourmap,token):
-    print('Creating Map : '+ tourmap['Title'])
-    headers = {'authorization': 'Bearer '+token}
-    r = requests.post('https://api.themap.net/api/Tour2/AddTourMap', data = tourmap, headers = headers)
-    return r.json()
+def create_map(options):
+    print('Creating Map : '+ options['Title'])
+    headers = {'authorization': 'Bearer '+config.token}
+    r = requests.post('https://api.themap.net/api/Tour2/AddTourMap', data = options, headers = headers)
+    return Map(r.json())

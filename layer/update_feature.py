@@ -1,12 +1,13 @@
 import requests
-from . import generate_feature_html
+from ..common import generate_feature_html
+from ..common import config
 
 # Template would be array of elements here.
 # Each element starts with element type. e.g. type:value
 # type here can be : heading,link,image,video
-def update_feature(feature_id,name,template,token):
+def update_feature(feature_id,name,template):
     print('Updating Feature : '+name)
-    headers = {'authorization': 'Bearer '+token}
+    headers = {'authorization': 'Bearer '+config.token}
     html = generate_feature_html(template)
     data = {
         "ID" : feature_id,
