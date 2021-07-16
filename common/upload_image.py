@@ -1,9 +1,10 @@
 import requests
 import base64
+from . import config
 
-def upload_image(local_path,token):
+def upload_image(local_path):
     print('Uploading image : '+ local_path)
-    headers = {'authorization': 'Bearer '+token}
+    headers = {'authorization': 'Bearer '+config.token}
     encoded = base64.b64encode(open(local_path, "rb").read())
     post_data ={
         "Data": 'data:img/jpeg;base64,'+encoded.decode('utf-8'),

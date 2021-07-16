@@ -12,11 +12,11 @@ This package is open source and available [here on github](https://github.com/th
 
 ## Authorization
 
-Since this python package is wrapper around the TheMap APIs. TheMap APIs are secure APIs and it needs authorization to interact with. If you don't have TheMap account, you can signup [here](https://themap.net/auth/signup) and set your credentials. Once you have you credentials you can generate your toke using following function.
+Since this python package is wrapper around the TheMap APIs. TheMap APIs are secure APIs and it needs authorization to interact with. If you don't have TheMap account, you can signup [here](https://themap.net/auth/signup) and set your credentials. Once you have you credentials you can generate your token using following function.
 
-    token = themap.common.get_token()
+    themap.common.init_session()
 
-This token is something you need to pass when you call any themap package function.
+Ideally this would be first line of your script and it will persist your token until script is running. After you initialize the session, you need not to woory about authorization until your script is complete.
 
 ## Modules
 
@@ -25,7 +25,6 @@ Overall package is divided into 4 modules.
 * `map` - Map level functions.
 * `layer` - Layer level functions.
 * `common` - Common functions accoss the package
-* `extras` - Not the core functions but something nice to have for more productivity
 
 ## Package layout
 
@@ -35,13 +34,10 @@ Overall package is divided into 4 modules.
         ...       # Other markdown pages, images and other files.
     map    # map module
         create_map.py # Create Map
-        ...           # Other map level functions
+        ...           # Other map level stuffs
     layer  # layer module
         create_layer.py # Create Layer
-        ...             # Other layer level functions
+        ...             # Other layer level stuffs
     common  # common module
         generate_screenshot.py # Generates the screenshot of the map
-        ...                    # Other common functions
-    extras  # extras module
-        generate_crime_file.py # Generates geojson from dallas crime API
-        ...                    # Other extra functions
+        ...                    # Other common stuffs

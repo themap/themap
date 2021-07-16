@@ -1,18 +1,16 @@
 # Link map
 
-    token = themap.common.get_token()
+    themap.common.init_session()
     options = {
                 'Title' : 'Sample Link Map',
                 'Description' : 'This is an example map',
                 'Handle' : 'example-link-map'
             }
-    map = themap.map.create_map(options,token)
-    options = {
+    map = themap.map.create_map(options)
+    layer = map.add_link_layer({
                 'IsVisible' : True,
-                'Name' : 'Layer Name Here',
-                'TourMapID' : map["ID"]
-            }
-    layer = themap.layer.create_link_layer(options,token)
+                'Name' : 'Layer Name Here'
+            })
     with open('data/links.csv') as csv_file:
         # Define which columns you want to add to properties
         properties = ["Name","Prop1","Prop2"]
@@ -24,10 +22,10 @@
                 'Latitude' : row['Latitude'],
                 'Longitude' : row['Longitude']
             }
-            links = themap.layer.add_links_to_link_layer(layer,[link],token)
+            links = layer.add_links([link])
             # It's optional to add properties, but let's take a look at how you do it...
             for prop in properties:
-                themap.layer.add_link_property(links[0],prop,row[prop],token)
-    print('Map generated : /'+tourmap['Handle'])
+                layer.add_link_property(links[0],prop,row[prop],token)
+    print('Map generated : /'+map.Handle)
 
-For complete reference to all possible map options and layer options, Refer [Link Layer definition](../concepts/link_layer_definition.md) and [Map definition](../concepts/map_definition.md)
+For complete reference to all possible map options and layer options, Refer [Link Layer definition](../concepts/link_layer_options.md) and [Map options](../concepts/map_options.md)

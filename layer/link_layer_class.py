@@ -27,14 +27,18 @@ class LinkLayer:
     def delete(self):
         return delete_link_layer(self.ID,config.token)
 
-    def update(self, options):
+    def update(self, options = {}):
         for key in options:
             setattr(self,key,options[key])
         layer_dict = update_link_layer(self.to_dict(),config.token)
         return self.assign_props(layer_dict)
     
     def add_links(self, links):
-        add_links_to_link_layer(self.ID,links,config.token)
+        links = add_links_to_link_layer(self.ID,links,config.token)
+        for link in links:
+            self.Links.append(link)
+        return links
     
     def add_link_property(self, link, name, value):
         add_link_property(link,name,value,config.token)
+        

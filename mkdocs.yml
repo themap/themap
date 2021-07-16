@@ -7,14 +7,18 @@ nav:
     - 'Map Functions' : 'map.md'
     - 'Layer Functions' : 'layer.md'
     - 'Common Functions' : 'common.md'
-    - 'Extra Functions' : 'extras.md'
     - Concepts : 
-        - 'Map' : 'concepts/map_definition.md'
-        - 'Layer' : 'concepts/layer_definition.md'
-        - 'Link Layer' : 'concepts/link_layer_definition.md'
-        - 'Image Layer' : 'concepts/image_layer_definition.md'
+        - 'Map Options' : 'concepts/map_options.md'
+        - 'Layer Options' : 'concepts/layer_options.md'
+        - 'Link Layer Options' : 'concepts/link_layer_options.md'
+        - 'Image Layer Options' : 'concepts/image_layer_options.md'
         - 'Layer Style' : 'concepts/layer_style_definition.md'
         - 'Feature Content Template' : 'concepts/feature_content_template.md'
+    - Objects : 
+        - 'Map' : 'objects/map.md'
+        - 'Layer' : 'objects/layer.md'
+        - 'Link Layer' : 'objects/link_layer.md'
+        - 'Image Layer' : 'objects/image_layer.md'
     - Examples : 
         - 'Data Map' : 'examples/data_map.md'
         - 'Image Map' : 'examples/image_map.md'

@@ -1,6 +1,6 @@
-# Map definition
+# Map options
 
-Map object is container object representing one map on TheMap platform.
+Map options which can be provided while creating or updating map object.
 
 ## Object Schema
 

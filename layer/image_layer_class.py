@@ -26,11 +26,14 @@ class ImageLayer:
     def delete(self):
         return delete_image_layer(self.ID,config.token)
 
-    def update(self, options):
+    def update(self, options = {}):
         for key in options:
             setattr(self,key,options[key])
         layer_dict = update_image_layer(self.to_dict(),config.token)
         return self.assign_props(layer_dict)
     
     def add_images(self, images):
-        add_images_to_image_layer(self.ID,images,config.token)
+        images = add_images_to_image_layer(self.ID,images,config.token)
+        for image in images:
+            self.Images.append(image)
+        return images

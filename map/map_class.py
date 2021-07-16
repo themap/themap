@@ -46,7 +46,7 @@ class Map:
     def delete(self):
         return delete_map(self.ID,config.token)
 
-    def update(self, options):
+    def update(self, options = {}):
         for key in options:
             setattr(self,key,options[key])
         map_dict = update_map(self.to_dict(),config.token)

@@ -38,9 +38,10 @@ class Layer:
         return download_layer(self.ID,config.token,as_file)
 
     def import_file(self, filepath, name_prop):
-        return import_file(filepath,name_prop,self.TourMapID,config.token,self.ID)
+        layer_dict =  import_file(filepath,name_prop,self.TourMapID,config.token,self.ID)
+        return self.assign_props(layer_dict)
 
-    def update(self, options):
+    def update(self, options = {}):
         for key in options:
             setattr(self,key,options[key])
         layer_dict = update_layer(self.to_dict(),config.token)
