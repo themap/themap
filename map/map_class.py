@@ -17,6 +17,7 @@ class Map:
         setattr(self,'Layers',params['Layers'])
         setattr(self,'LinkLayers',params['LinkLayers'])
         setattr(self,'ImageLayers',params['ImageLayers'])
+        setattr(self,'TileLayers',params['TileLayers'])
         if self.Layers == None:
             self.Layers = []
         self.Layers = list(map(lambda x : Layer(x),self.Layers))
@@ -26,6 +27,8 @@ class Map:
         if self.ImageLayers == None:
             self.ImageLayers = []
         self.ImageLayers = list(map(lambda x : ImageLayer(x),self.ImageLayers))
+        if self.TileLayers == None:
+            self.TileLayers = []
 
     def __repr__(self): 
         return repr(self.to_dict())
@@ -36,7 +39,7 @@ class Map:
 
     def assign_props(self,params):
         for key in params:
-            if key not in ['Layers','LinkLayers','ImageLayers']:
+            if key not in ['Layers','LinkLayers','ImageLayers','TileLayers']:
                 setattr(self,key,params[key])
         return self
 
