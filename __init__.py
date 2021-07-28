@@ -6,4 +6,4 @@ from .layer import *
 from .extras import *
 
 # Version of the themap package : https://realpython.com/pypi-publish-python-package
-__version__ = "2.0.0"
+__version__ = "2.0.1"

@@ -1,13 +1,13 @@
 # Image map
 
     themap.common.init_session()
-    options = {
+    map_options = {
                 'Title' : 'Sample Image Map',
                 'Description' : 'Example image map',
                 'Handle' : 'example-image-map'
             }
-    map = themap.map.create_map(options) 
-    layer = map.add_image_layer(options,{
+    my_map = themap.map.create_map(map_options) 
+    my_layer = my_map.add_image_layer({
                 'IsVisible' : True,
                 'Name' : 'Layer Name Here'
             })
@@ -24,9 +24,9 @@
             }
             images.append(image)
             image['Url'] = themap.common.upload_image(row['ImageFile'])
-        layer.add_images(images)
+        my_layer.add_images(images)
     # In case you want to take snapshot of map and set it as display image of map.    
-    map.generate_screenshot()
-    print('Map generated : /'+map.Handle)
+    my_map.generate_screenshot()
+    print('Map generated : /'+my_map.Handle)
 
 For complete reference to all possible map options and layer options, Refer [Image Layer definition](../concepts/image_layer_options.md) and [Map options](../concepts/map_options.md)

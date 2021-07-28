@@ -9,6 +9,7 @@ from .functions import apply_category_opacity
 from .functions import apply_category_outline_colors
 from .functions import download_layer
 from .functions import import_file
+from .functions import get_layer_fields
 from ..common import config
 from ..layer import create_layer
 
@@ -36,6 +37,9 @@ class Layer:
 
     def download(self, as_file = None):
         return download_layer(self.ID,config.token,as_file)
+
+    def fields(self):
+        return get_layer_fields(self.ID,config.token)
 
     def import_file(self, filepath, name_prop):
         layer_dict =  import_file(filepath,name_prop,self.TourMapID,config.token,self.ID)

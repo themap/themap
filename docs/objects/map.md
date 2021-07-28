@@ -8,6 +8,9 @@ Map object is container object representing one map on TheMap platform.
 * `Description` - Description of the map e.g. `"This is cool!"`
 * `Logo` - Logo of the map e.g. `"https"://url.to/imge.jpg"`
 * `Handle` - Every map must have unique handle. This handle is something provides unique url to map as well. e.g. `"sample-map-handle"`
+* `Layers` - List of data layers
+* `LinkLayers` - List of link layers
+* `ImageLayers` - List of image layers
 * `Is3D` - Boolean deciding whether TheMap should be rendered as 3D or 2D. e.g. `false`
 * `IsListed` - If True, map will be listed on TheMap publically and also visible in search. e.g. `true`
 * `LayerHasContent` - If True, layers will switch to presentation mode while rendering and thus will appear one by one based on input directions. e.g. `false`
@@ -43,11 +46,11 @@ It updates existing map with provided fields
 
 ---
 
-### all_features
+### features
 
 It retrives all the features of specific map.
 
-**Signature**: `all_features()`
+**Signature**: `features()`
 
 **Returns**: `features` **{array}** list of all the features
 

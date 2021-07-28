@@ -15,3 +15,4 @@ from .update_image_layer import update_image_layer
 from .add_links_to_link_layer import add_links_to_link_layer
 from .add_images_to_image_layer import add_images_to_image_layer
 from .add_link_property import add_link_property
+from .get_layer_fields import get_layer_fields

@@ -128,3 +128,14 @@ It will take geoJSON file and upload it to layer as geometry + data.
 - `name_prop` **{string}**: GeoJSON property name which should be used as name of each shape
 
 **Returns**: `layer` [**{object}**](layer.md)
+
+
+---
+
+### fields
+
+Provides list of all the fields of particular layer.
+
+**Signature**: `fields()`
+
+**Returns**: `fields` **{list}**

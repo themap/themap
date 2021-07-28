@@ -73,7 +73,7 @@ class Map:
         self.ImageLayers.append(layer)
         return layer
     
-    def all_features(self):
+    def features(self):
         return get_all_features(self.ID,config.token)
     
     def generate_screenshot(self):
